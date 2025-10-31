@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Predictions Tracker - 4-8 Week Monitor</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .price-display {
+            font-size: 3em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 20px 0;
+        }
+        .update-btn {
+            padding: 10px 30px;
+            font-size: 1.1em;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .tracker-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            padding: 30px;
+        }
+        .tracker-card {
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .tracker-header {
+            padding: 20px;
+            color: white;
+            font-weight: bold;
+        }
+        .target-price {
+            font-size: 2.2em;
+            font-weight: bold;
+            color: #2c3e50;
+            text-align: center;
+            margin: 15px 0;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 30px;
+            background: #e0e0e0;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        .progress-fill {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Bitcoin Predictions Tracker</h1>
+            <p>4-8 Week Monitoring System (Oct 31 - Dec 31, 2025)</p>
+        </div>
+        
+        <div style="text-align: center; padding: 30px; background: #f8f9fa;">
+            <div style="color: #7f8c8d; margin-bottom: 10px;">Current Bitcoin Price</div>
+            <div class="price-display" id="current-price">$126,000</div>
+            <input type="number" id="price-input" value="126000" style="padding: 10px; font-size: 1.2em; border: 2px solid #667eea; border-radius: 8px; width: 200px; margin: 10px;">
+            <button class="update-btn" onclick="updatePrice()">Update Price</button>
+        </div>
+        
+        <div class="tracker-grid">
+            <!-- Rekt Capital -->
+            <div class="tracker-card">
+                <div class="tracker-header" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                    <h3>Rekt Capital (85-90% Accuracy)</h3>
+                </div>
+                <div style="padding: 20px;">
+                    <div class="target-price">$150-200K Target</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="rekt-progress" style="width: 84%; background: linear-gradient(90deg, #11998e 0%, #38ef7d 100%);">84%</div>
+                    </div>
+                    <div style="margin-top: 15px; line-height: 1.8;">
+                        <strong>Key Milestones:</strong><br>
+                        ⏳ Break above $115K<br>
+                        ⏳ Break above $120K<br>
+                        ⏳ Reach $150K minimum<br>
+                        ⏳ No close below $93K
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Jason Pizzino -->
+            <div class="tracker-card">
+                <div class="tracker-header" style="background: linear-gradient(135deg, #f2994a 0%, #f2c94c 100%);">
+                    <h3>Jason Pizzino (80-85% Accuracy)</h3>
+                </div>
+                <div style="padding: 20px;">
+                    <div class="target-price">$130-160K Target</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="jason-progress" style="width: 97%; background: linear-gradient(90deg, #f2994a 0%, #f2c94c 100%);">97%</div>
+                    </div>
+                    <div style="margin-top: 15px; line-height: 1.8;">
+                        <strong>Key Milestones:</strong><br>
+                        ⏳ Hold 21-week EMA<br>
+                        ⏳ Break $130K<br>
+                        ⏳ S&P correlation stays bullish<br>
+                        ⏳ 35-month cycle confirmation
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Didi -->
+            <div class="tracker-card">
+                <div class="tracker-header" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                    <h3>Didi Taihuttu (75-80% Accuracy)</h3>
+                </div>
+                <div style="padding: 20px;">
+                    <div class="target-price">$160K Target</div>
+                    <div style="color: #dc3545; font-weight: bold; text-align: center;">⚠️ 4-Week Deadline: Nov 28</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="didi-progress" style="width: 79%; background: linear-gradient(90deg, #11998e 0%, #38ef7d 100%);">79%</div>
+                    </div>
+                    <div style="margin-top: 15px; line-height: 1.8;">
+                        <strong>Key Milestones:</strong><br>
+                        ⏳ Stay above $112K<br>
+                        ⏳ Break $118-120K<br>
+                        ⏳ November 46% pump<br>
+                        ⏳ Reach $160K by Dec
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Michael Pizzino -->
+            <div class="tracker-card">
+                <div class="tracker-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    <h3>Michael Pizzino (70-75% Accuracy)</h3>
+                </div>
+                <div style="padding: 20px;">
+                    <div class="target-price">$136K Target</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="michael-progress" style="width: 93%; background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);">93%</div>
+                    </div>
+                    <div style="margin-top: 15px; line-height: 1.8;">
+                        <strong>Key Milestones:</strong><br>
+                        ⏳ Break $114K<br>
+                        ⏳ Break $116K<br>
+                        ⏳ Retest $120K<br>
+                        ⏳ Hold $108K weekly support
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Brendan -->
+            <div class="tracker-card">
+                <div class="tracker-header" style="background: linear-gradient(135deg, #ee0979 0%, #ff6a00 100%);">
+                    <h3>Brendan Market Canary (35-45% Accuracy)</h3>
+                </div>
+                <div style="padding: 20px;">
+                    <div class="target-price"><s>$168K</s> → $140-150K</div>
+                    <div style="text-align: center; color: #dc3545; font-weight: bold;">⚠️ LOW RELIABILITY</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="brendan-progress" style="width: 90%; background: linear-gradient(90deg, #ee0979 0%, #ff6a00 100%);">90%</div>
+                    </div>
+                    <div style="margin-top: 15px; line-height: 1.8;">
+                        <strong>Key Milestones:</strong><br>
+                        ❌ $132K "easily" - FAILED<br>
+                        ⏳ RMA crosses 69K<br>
+                        ⏳ 30-day countdown<br>
+                        ⏳ Reach $140-150K Dec
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="margin: 30px; padding: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 15px;">
+            <h2 style="text-align: center; margin-bottom: 20px;">📈 Consensus Summary</h2>
+            <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 10px;">
+                <strong>60-65% Probability:</strong> Bitcoin continues to $140-160K (Nov-Dec 2025)<br><br>
+                <strong>35-40% Probability:</strong> $126K (Oct 6) was the cycle top<br><br>
+                <strong>Most Trusted:</strong> Rekt Capital (85-90% accuracy)<br>
+                <strong>Most Honest:</strong> Jason Pizzino (genuinely uncertain)
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let currentPrice = 126000;
+        
+        function updatePrice() {
+            const input = document.getElementById('price-input');
+            currentPrice = parseFloat(input.value) || 126000;
+            document.getElementById('current-price').textContent = '$' + currentPrice.toLocaleString();
+            
+            // Update progress bars
+            updateProgress('rekt', 150000);
+            updateProgress('jason', 130000);
+            updateProgress('didi', 160000);
+            updateProgress('michael', 136000);
+            updateProgress('brendan', 140000);
+        }
+        
+        function updateProgress(trader, target) {
+            const progress = Math.min((currentPrice / target) * 100, 100);
+            const bar = document.getElementById(trader + '-progress');
+            bar.style.width = progress + '%';
+            bar.textContent = progress.toFixed(1) + '%';
+        }
+    </script>
+</body>
+</html>
