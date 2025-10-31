@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bitcoin Traders Comparison - October 2025 Analysis</title>
+    <title>Bitcoin Traders Comparison - 6 Analysts (Oct 2025)</title>
     <style>
         * {
             margin: 0;
@@ -19,7 +19,7 @@
         }
         
         .container {
-            max-width: 1400px;
+            max-width: 1600px;
             margin: 0 auto;
             background: white;
             border-radius: 20px;
@@ -54,35 +54,22 @@
             font-weight: bold;
         }
         
-        .legend {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
+        .update-notice {
+            background: #e7f3ff;
+            border-left: 4px solid #2196F3;
             padding: 20px;
-            background: #f8f9fa;
-            border-bottom: 2px solid #dee2e6;
-            flex-wrap: wrap;
+            margin: 30px;
+            border-radius: 5px;
         }
         
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
+        .update-notice h3 {
+            color: #1976D2;
+            margin-bottom: 10px;
         }
-        
-        .legend-color {
-            width: 20px;
-            height: 20px;
-            border-radius: 4px;
-        }
-        
-        .accuracy-high { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); }
-        .accuracy-medium { background: linear-gradient(135deg, #f2994a 0%, #f2c94c 100%); }
-        .accuracy-low { background: linear-gradient(135deg, #ee0979 0%, #ff6a00 100%); }
         
         .traders-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
             gap: 20px;
             padding: 30px;
         }
@@ -268,11 +255,15 @@
             margin-bottom: 5px;
         }
         
+        .accuracy-high { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); }
+        .accuracy-medium { background: linear-gradient(135deg, #f2994a 0%, #f2c94c 100%); }
+        .accuracy-low { background: linear-gradient(135deg, #ee0979 0%, #ff6a00 100%); }
+        
         .comparison-matrix {
             margin: 30px;
             background: white;
             border-radius: 15px;
-            overflow: hidden;
+            overflow-x: auto;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
@@ -287,6 +278,7 @@
         .matrix-table {
             width: 100%;
             border-collapse: collapse;
+            min-width: 800px;
         }
         
         .matrix-table th {
@@ -295,11 +287,13 @@
             text-align: left;
             font-weight: 600;
             border-bottom: 2px solid #dee2e6;
+            font-size: 0.9em;
         }
         
         .matrix-table td {
             padding: 15px;
             border-bottom: 1px solid #dee2e6;
+            font-size: 0.9em;
         }
         
         .matrix-table tr:hover {
@@ -334,67 +328,13 @@
             margin: 10px 0;
         }
         
-        .key-levels {
-            margin: 30px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        
-        .level-box {
-            padding: 20px;
-            border-radius: 15px;
-            color: white;
-        }
-        
-        .bullish-box {
-            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-        }
-        
-        .bearish-box {
-            background: linear-gradient(135deg, #ee0979 0%, #ff6a00 100%);
-        }
-        
-        .level-box h3 {
-            font-size: 1.3em;
-            margin-bottom: 15px;
-        }
-        
-        .level-box ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .level-box li {
-            padding: 8px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.3);
-        }
-        
-        .level-box li:last-child {
-            border-bottom: none;
-        }
-        
         @media (max-width: 768px) {
             .traders-grid {
                 grid-template-columns: 1fr;
             }
             
-            .key-levels {
-                grid-template-columns: 1fr;
-            }
-            
             .header h1 {
                 font-size: 1.8em;
-            }
-        }
-        
-        @media print {
-            body {
-                background: white;
-            }
-            
-            .trader-card {
-                page-break-inside: avoid;
             }
         }
     </style>
@@ -403,28 +343,18 @@
     <div class="container">
         <div class="header">
             <h1>🚀 Bitcoin Trader Predictions Analysis</h1>
-            <div class="subtitle">October 2025 Comprehensive Comparison</div>
+            <div class="subtitle">6 Crypto Analysts | October 2025 Comprehensive Comparison</div>
             <div class="context">📊 Bitcoin ATH: $126,000 (October 6, 2025) | Is This The Top?</div>
         </div>
         
-        <div class="legend">
-            <div class="legend-item">
-                <div class="legend-color accuracy-high"></div>
-                <span>High Accuracy (75%+)</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-color accuracy-medium"></div>
-                <span>Medium Accuracy (50-74%)</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-color accuracy-low"></div>
-                <span>Low Accuracy (<50%)</span>
-            </div>
+        <div class="update-notice">
+            <h3>🆕 NEW ADDITION: Gareth Soloway</h3>
+            <p><strong>Added:</strong> October 31, 2025</p>
+            <p><strong>Notable:</strong> Successfully predicted $126K top with precision - hit $126.2K on October 6. Technical trader focused on probability-based analysis with 70-75% accuracy rating.</p>
         </div>
         
         <div class="traders-grid">
-            <!-- Rekt Capital -->
-            <div class="trader-card">
+            <!-- Rekt Capital --><div class="trader-card">
                 <div class="trader-header accuracy-high">
                     <div class="rank-badge">#1 Most Accurate</div>
                     <h2>Rekt Capital</h2>
@@ -659,10 +589,75 @@
                 </div>
             </div>
             
+            <!-- Gareth Soloway - NEW -->
+            <div class="trader-card">
+                <div class="trader-header accuracy-medium">
+                    <div class="rank-badge">🆕 NEW #5</div>
+                    <h2>Gareth Soloway</h2>
+                    <div class="handle">@GarethSoloway</div>
+                </div>
+                <div class="trader-content">
+                    <div class="target-section">
+                        <div class="target-price">$126-130K ✅</div>
+                        <div class="target-label">Near-Term (Hit $126.2K Oct 6)</div>
+                    </div>
+                    
+                    <div class="metrics">
+                        <div class="metric">
+                            <div class="metric-value" style="color: #f2994a;">70-75%</div>
+                            <div class="metric-label">Historical Accuracy</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value" style="color: #ee0979;">20-25%</div>
+                            <div class="metric-label">"ATH Is In"</div>
+                        </div>
+                    </div>
+                    
+                    <div class="sentiment-bars">
+                        <div class="sentiment-bar">
+                            <div class="sentiment-label">🐂 Bullish: 45%</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill bullish-bar" style="width: 45%;">45%</div>
+                            </div>
+                        </div>
+                        <div class="sentiment-bar">
+                            <div class="sentiment-label">🐻 Bearish: 55%</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill bearish-bar" style="width: 55%;">55%</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="indicators">
+                        <h3>📈 Key Indicators</h3>
+                        <ul>
+                            <li>Long-term trendlines (2011/2017→2021→2025)</li>
+                            <li>Parallel channel analysis</li>
+                            <li>Confirmation signals (secondary close)</li>
+                            <li>Probability-based (70-75% threshold)</li>
+                            <li>Support/resistance (50+ tag levels)</li>
+                            <li>Multiple timeframe analysis</li>
+                            <li>Pivot point analysis</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="stance">
+                        <strong>October Stance:</strong> Successfully predicted $126K top (hit $126.2K Oct 6). Currently near-term BEARISH due to confirmed breakdown, but long-term expects higher. "Short-term predictions more accurate; long-term are 50/50." Major buy level: $93-95K.
+                    </div>
+                    
+                    <div class="warning">
+                        <div class="warning-title">✅ Prediction Win!</div>
+                        Oct 2: Predicted $126-127K target<br>
+                        Oct 6: Bitcoin hit $126,200 (within $200!)<br>
+                        Oct 10: Predicted $110K support → Correct
+                    </div>
+                </div>
+            </div>
+            
             <!-- Brendan Market Canary -->
             <div class="trader-card">
                 <div class="trader-header accuracy-low">
-                    <div class="rank-badge">#5 Inconsistent</div>
+                    <div class="rank-badge">#6 Inconsistent</div>
                     <h2>Brendan (Market Canary)</h2>
                     <div class="handle">@BrendanMarketCanary</div>
                 </div>
@@ -730,7 +725,7 @@
         
         <!-- Comparison Matrix -->
         <div class="comparison-matrix">
-            <div class="matrix-title">📊 Side-by-Side Comparison</div>
+            <div class="matrix-title">📊 Side-by-Side Comparison - All 6 Traders</div>
             <table class="matrix-table">
                 <thead>
                     <tr>
@@ -775,6 +770,14 @@
                         <td>75% / 25%</td>
                         <td>⭐⭐⭐⭐</td>
                     </tr>
+                    <tr style="background: #e7f3ff;">
+                        <td><strong>Gareth Soloway 🆕</strong></td>
+                        <td>$126-130K ✅</td>
+                        <td><strong>70-75%</strong></td>
+                        <td>20-25%</td>
+                        <td>45% / 55%</td>
+                        <td>⭐⭐⭐⭐</td>
+                    </tr>
                     <tr style="background: #fff3cd;">
                         <td><strong>Brendan</strong></td>
                         <td><s>$168K</s> → $140-150K</td>
@@ -787,52 +790,27 @@
             </table>
         </div>
         
-        <!-- Key Levels -->
-        <div class="key-levels">
-            <div class="level-box bullish-box">
-                <h3>✅ Bullish Continuation Triggers</h3>
-                <ul>
-                    <li>💚 Break & hold above $115-120K (Consensus)</li>
-                    <li>💚 November shows 46% pump (Didi's historical pattern)</li>
-                    <li>💚 RMA crosses 69K (Brendan's indicator)</li>
-                    <li>💚 No breakdown below $108K weekly (Michael)</li>
-                    <li>💚 Volume confirmation above $75B (Michael)</li>
-                </ul>
-            </div>
-            
-            <div class="level-box bearish-box">
-                <h3>❌ Bearish Confirmation Triggers</h3>
-                <ul>
-                    <li>🔴 Monthly close below $93K (Rekt's bear signal)</li>
-                    <li>🔴 No pump within 4 weeks (Didi calls cycle end)</li>
-                    <li>🔴 Breakdown below $3.5T market cap (Michael)</li>
-                    <li>🔴 Failure to break $120K after multiple attempts</li>
-                    <li>🔴 Weekly close below $108K with lower highs</li>
-                </ul>
-            </div>
-        </div>
-        
         <!-- Final Verdict -->
         <div class="verdict">
-            <h2>🎯 Final Verdict - Weighted Consensus</h2>
+            <h2>🎯 Final Verdict - Weighted Consensus (6 Traders)</h2>
             <div class="verdict-content">
                 <div class="verdict-stat">📈 60-65% Probability: Bitcoin continues to $140-160K (Nov-Dec 2025)</div>
                 <div class="verdict-stat">📉 35-40% Probability: $126K (Oct 6) was the cycle top</div>
                 
                 <p style="margin-top: 20px; font-size: 1.1em;">
-                    <strong>Most Trustworthy Voice:</strong> Rekt Capital (85-90% accuracy) - His statement "time-wise it's time to peak, but price structure hasn't confirmed yet" is the most balanced assessment.
+                    <strong>Most Trustworthy Voice:</strong> Rekt Capital (85-90% accuracy) - "Time-wise it's time to peak, but price structure hasn't confirmed yet"
                 </p>
                 
                 <p style="margin-top: 15px; font-size: 1.1em;">
-                    <strong>Most Honest Voice:</strong> Jason Pizzino (80-85% accuracy) - His genuine 50/50 uncertainty acknowledges real risk without false confidence.
+                    <strong>Most Honest Voice:</strong> Jason Pizzino (80-85% accuracy) - Genuine 50/50 uncertainty acknowledges real risk
                 </p>
                 
                 <p style="margin-top: 15px; font-size: 1.1em;">
-                    <strong>The November Test:</strong> The next 4 weeks are CRITICAL. If Bitcoin breaks $115-120K with conviction → bullish case strengthens. If it fails to pump and breaks below $108-112K → bearish case confirmed.
+                    <strong>Best Short-Term Calls:</strong> Gareth Soloway - Nailed $126K top and $110K support with precision
                 </p>
                 
                 <p style="margin-top: 15px; font-size: 1.1em;">
-                    <strong>Recommendation:</strong> Weight Rekt Capital (highest), Jason Pizzino & Didi (strong), Michael Pizzino (moderate), Brendan (low) when making decisions.
+                    <strong>The November Test:</strong> Next 4 weeks CRITICAL. Bitcoin breaks $115-120K → bullish case strengthens. Fails to pump → bearish case confirmed.
                 </p>
             </div>
         </div>
