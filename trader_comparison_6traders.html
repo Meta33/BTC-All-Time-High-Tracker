@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Traders Comparison - 6 Analysts (Oct 2025)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+        
+        .header .context {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        
+        .update-notice {
+            background: #e7f3ff;
+            border-left: 4px solid #2196F3;
+            padding: 20px;
+            margin: 30px;
+            border-radius: 5px;
+        }
+        
+        .update-notice h3 {
+            color: #1976D2;
+            margin-bottom: 10px;
+        }
+        
+        .traders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 20px;
+            padding: 30px;
+        }
+        
+        .trader-card {
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            background: white;
+        }
+        
+        .trader-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .trader-header {
+            padding: 20px;
+            color: white;
+            position: relative;
+        }
+        
+        .trader-header h2 {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+        
+        .trader-header .handle {
+            opacity: 0.9;
+            font-size: 0.9em;
+        }
+        
+        .rank-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255,255,255,0.3);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        .trader-content {
+            padding: 20px;
+        }
+        
+        .target-section {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .target-price {
+            font-size: 2em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .target-label {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        
+        .metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .metric {
+            text-align: center;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .metric-value {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .metric-label {
+            font-size: 0.85em;
+            color: #7f8c8d;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 25px;
+            background: #e0e0e0;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 5px;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.85em;
+            transition: width 1s ease-in-out;
+        }
+        
+        .sentiment-bars {
+            margin-bottom: 15px;
+        }
+        
+        .sentiment-bar {
+            margin-bottom: 10px;
+        }
+        
+        .sentiment-label {
+            font-size: 0.9em;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .bullish-bar { background: linear-gradient(90deg, #11998e 0%, #38ef7d 100%); }
+        .bearish-bar { background: linear-gradient(90deg, #ee0979 0%, #ff6a00 100%); }
+        
+        .indicators {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .indicators h3 {
+            font-size: 1em;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .indicators ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .indicators li {
+            padding: 5px 0;
+            font-size: 0.9em;
+            color: #555;
+        }
+        
+        .indicators li:before {
+            content: "▸ ";
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .stance {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 0.95em;
+            line-height: 1.5;
+            color: #856404;
+        }
+        
+        .warning {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: #721c24;
+        }
+        
+        .warning-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .accuracy-high { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); }
+        .accuracy-medium { background: linear-gradient(135deg, #f2994a 0%, #f2c94c 100%); }
+        .accuracy-low { background: linear-gradient(135deg, #ee0979 0%, #ff6a00 100%); }
+        
+        .comparison-matrix {
+            margin: 30px;
+            background: white;
+            border-radius: 15px;
+            overflow-x: auto;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .matrix-title {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            font-size: 1.5em;
+            text-align: center;
+        }
+        
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 800px;
+        }
+        
+        .matrix-table th {
+            background: #f8f9fa;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #dee2e6;
+            font-size: 0.9em;
+        }
+        
+        .matrix-table td {
+            padding: 15px;
+            border-bottom: 1px solid #dee2e6;
+            font-size: 0.9em;
+        }
+        
+        .matrix-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .verdict {
+            margin: 30px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .verdict h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .verdict-content {
+            background: rgba(255,255,255,0.15);
+            padding: 20px;
+            border-radius: 10px;
+            line-height: 1.8;
+        }
+        
+        .verdict-stat {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .traders-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Bitcoin Trader Predictions Analysis</h1>
+            <div class="subtitle">6 Crypto Analysts | October 2025 Comprehensive Comparison</div>
+            <div class="context">📊 Bitcoin ATH: $126,000 (October 6, 2025) | Is This The Top?</div>
+        </div>
+        
+        <div class="update-notice">
+            <h3>🆕 NEW ADDITION: Gareth Soloway</h3>
+            <p><strong>Added:</strong> October 31, 2025</p>
+            <p><strong>Notable:</strong> Successfully predicted $126K top with precision - hit $126.2K on October 6. Technical trader focused on probability-based analysis with 70-75% accuracy rating.</p>
+        </div>
+        
+        <div class="traders-grid">
+            <!-- Rekt Capital --><div class="trader-card">
+                <div class="trader-header accuracy-high">
+                    <div class="rank-badge">#1 Most Accurate</div>
+                    <h2>Rekt Capital</h2>
+                    <div class="handle">@rektcapital</div>
+                </div>
+                <div class="trader-content">
+                    <div class="target-section">
+                        <div class="target-price">$150-200K</div>
+                        <div class="target-label">Price Target</div>
+                    </div>
+                    
+                    <div class="metrics">
+                        <div class="metric">
+                            <div class="metric-value" style="color: #11998e;">85-90%</div>
+                            <div class="metric-label">Historical Accuracy</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value" style="color: #ee0979;">25-30%</div>
+                            <div class="metric-label">"ATH Is In"</div>
+                        </div>
+                    </div>
+                    
+                    <div class="sentiment-bars">
+                        <div class="sentiment-bar">
+                            <div class="sentiment-label">🐂 Bullish: 70-75%</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill bullish-bar" style="width: 72.5%;">72.5%</div>
+                            </div>
+                        </div>
+                        <div class="sentiment-bar">
+                            <div class="sentiment-label">🐻 Bearish: 25-30%</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill bearish-bar" style="width: 27.5%;">27.5%</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="indicators">
+                        <h3>📈 Key Indicators</h3>
+                        <ul>
+                            <li>21-week EMA</li>
+                            <li>Macro lower highs</li>
+                            <li>Monthly support/resistance</li>
+                            <li>7-year trendlines</li>
+                            <li>50% Fibonacci levels</li>
+                            <li>Bitcoin dominance</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="stance">
+                        <strong>October Stance:</strong> "Time-wise it's time to peak" (35 months into bull market), but needs $115-$120K breakout for continuation. $93K breakdown = bear confirmation.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Jason Pizzino -->
+            <div class="trader-card">
+                <div class="trader-header accuracy-high">
+                    <div class="rank-badge">#2 Most Honest</div>
+                    <h2>Jason Pizzino</h2>
+                    <div class="handle">@JasonPizzinoOfficial</div>
+                </div>
+                <div class="trader-content">
+                    <div class="target-section">
+                        <div class="target-price">$130-160K</div>
+                        <div class="target-label">Price Target Range</div>
+                    </div>
+                    
+                    <div class="metrics">
+                        <div class="metric">
+                            <div class="metric-value" style="color: #11998e;">80-85%</div>
+                            <div class="metric-label">Historical Accuracy</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value" style="color: #f2994a;">45-50%</div>
+                            <div class="metric-label">"ATH Is In"</div>
+                        </div>
+                    </div>
+                    
+                    <div class="sentiment-bars">
+                        <div class="sentiment-bar">
+                            <div class="sentiment-label">🐂 Bullish: 50-55%</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill bullish-bar" style="width: 52.5%;">52.5%</div>
+                            </div>
+                        </div>
+                        <div class="sentiment-bar">
+                            <div class="sentiment-label">🐻 Bearish: 45-50%</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill bearish-bar" style="width: 47.5%;">47.5%</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="indicators">
+                        <h3>📈 Key Indicators</h3>
+                        <ul>
+                            <li>50% Fibonacci retracements</li>
+                            <li>21-week EMA</li>
+                            <li>18-year real estate cycle</li>
+                            <li>S&P 500 correlation</li>
+                            <li>MicroStrategy correlation</li>
+                            <li>USDT dominance</li>
+                            <li>5-10 year cycle overlays</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="stance">
+                        <strong>October Stance:</strong> GENUINELY UNCERTAIN. "We're 35 months into bull market - prior bull markets ended in 35th month (2017, 2021)." Most balanced analyst - truly 50/50 on whether top is in.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Didi Taihuttu -->
+            <div class="trader-card">
+                <div class="trader-header accuracy-high">
+                    <div class="rank-badge">#3 November Bull</div>
+                    <h2>Didi Taihuttu</h2>
+                    <div class="handle">@TheBitcoinfamily</div>
+                </div>
+                <div class="trader-content">
+                    <div class="target-section">
+                        <div class="target-price">$160K</div>
+                        <div class="target-label">November-December Target</div>
+                    </div>
+                    
+                    <div class="metrics">
+                        <div class="metric">
+                            <div class="metric-value" style="color: #11998e;">75-80%</div>
+                            <div class="metric-label">Historical Accuracy</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value" style="color: #ee0979;">15-20%</div>
+                            <div class="metric-label">"ATH Is In"</div>
+                        </div>
+                    </div>
+                    
+                    <div class="sentiment-bars">
+                        <div class="sentiment-bar">
+                            <div class="sentiment-label">🐂 Bullish: 75-80%</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill bullish-bar" style="width: 77.5%;">77.5%</div>
+                            </div>
+                        </div>
+                        <div class="sentiment-bar">
+                            <div class="sentiment-label">🐻 Bearish: 20-25%</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill bearish-bar" style="width: 22.5%;">22.5%</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="indicators">
+                        <h3>📈 Key Indicators</h3>
+                        <ul>
+                            <li>Gaussian channels (5-day)</li>
+                            <li>Monthly/seasonal patterns</li>
+                            <li>November historical (46% avg)</li>
+                            <li>50 SMA weekly</li>
+                            <li>RSI ribbon weekly</li>
+                            <li>4-year cycle phases</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="stance">
+                        <strong>October Stance:</strong> STRONGLY BULLISH on November pump. "November is historically most bullish month - 46% average growth in last 12 years." Bitcoin needs $112K hold, break $118-$120K.
+                    </div>
+                    
+                    <div class="warning">
+                        <div class="warning-title">⚠️ 4-Week Deadline!</div>
+                        "If there is no pump in the next 4 weeks, I will definitely call it the end of the bull market."
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Michael Pizzino -->
+            <div class="trader-card">
+                <div class="trader-header accuracy-medium">
+                    <div class="rank-badge">#4 Technical Pro</div>
+                    <h2>Michael Pizzino</h2>
+                    <div class="handle">@MichaelPizzino</div>
+                </div>
+                <div class="trader-content">
+                    <div class="target-section">
+                        <div class="target-price">$136K</div>
+                        <div class="target-label">Wave-5 Extension Target</div>
+                    </div>
+                    
+                    <div class="metrics">
+                        <div class="metric">
+                            <div class="metric-value" style="color: #f2994a;">70-75%</div>
+                            <div class="metric-label">Historical Accuracy</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value" style="color: #ee0979;">20-25%</div>
+                            <div class="metric-label">"ATH Is In"</div>
+                        </div>
+                    </div>
+                    
+                    <div class="sentiment-bars">
+                        <div class="sentiment-bar">
+                            <div class="sentiment-label">🐂 Bullish: 75%</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill bullish-bar" style="width: 75%;">75%</div>
+                            </div>
+                        </div>
+                        <div class="sentiment-bar">
+                            <div class="sentiment-label">🐻 Bearish: 25%</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill bearish-bar" style="width: 25%;">25%</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="indicators">
+                        <h3>📈 Key Indicators</h3>
+                        <ul>
+                            <li>Elliott Wave analysis</li>
+                            <li>50% Fibonacci levels</li>
+                            <li>TIA Gann Swing Pro</li>
+                            <li>Liquidations (>$1B threshold)</li>
+                            <li>Long/short ratio</li>
+                            <li>FOMO Finder index</li>
+                            <li>Fear & Greed index</li>
+                            <li>Market cap ($3.5T invalidation)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="stance">
+                        <strong>October Stance:</strong> CAUTIOUSLY OPTIMISTIC with wave-5 extension into 2026. "Anticipating acceleration north" toward new ATH beyond $126K. Awaits $114K→$116K→$120K breakout confirmation.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gareth Soloway - NEW -->
+            <div class="trader-card">
+                <div class="trader-header accuracy-medium">
+                    <div class="rank-badge">🆕 NEW #5</div>
+                    <h2>Gareth Soloway</h2>
+                    <div class="handle">@GarethSoloway</div>
+                </div>
+                <div class="trader-content">
+                    <div class="target-section">
+                        <div class="target-price">$126-130K ✅</div>
+                        <div class="target-label">Near-Term (Hit $126.2K Oct 6)</div>
+                    </div>
+                    
+                    <div class="metrics">
+                        <div class="metric">
+                            <div class="metric-value" style="color: #f2994a;">70-75%</div>
+                            <div class="metric-label">Historical Accuracy</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value" style="color: #ee0979;">20-25%</div>
+                            <div class="metric-label">"ATH Is In"</div>
+                        </div>
+                    </div>
+                    
+                    <div class="sentiment-bars">
+                        <div class="sentiment-bar">
+                            <div class="sentiment-label">🐂 Bullish: 45%</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill bullish-bar" style="width: 45%;">45%</div>
+                            </div>
+                        </div>
+                        <div class="sentiment-bar">
+                            <div class="sentiment-label">🐻 Bearish: 55%</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill bearish-bar" style="width: 55%;">55%</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="indicators">
+                        <h3>📈 Key Indicators</h3>
+                        <ul>
+                            <li>Long-term trendlines (2011/2017→2021→2025)</li>
+                            <li>Parallel channel analysis</li>
+                            <li>Confirmation signals (secondary close)</li>
+                            <li>Probability-based (70-75% threshold)</li>
+                            <li>Support/resistance (50+ tag levels)</li>
+                            <li>Multiple timeframe analysis</li>
+                            <li>Pivot point analysis</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="stance">
+                        <strong>October Stance:</strong> Successfully predicted $126K top (hit $126.2K Oct 6). Currently near-term BEARISH due to confirmed breakdown, but long-term expects higher. "Short-term predictions more accurate; long-term are 50/50." Major buy level: $93-95K.
+                    </div>
+                    
+                    <div class="warning">
+                        <div class="warning-title">✅ Prediction Win!</div>
+                        Oct 2: Predicted $126-127K target<br>
+                        Oct 6: Bitcoin hit $126,200 (within $200!)<br>
+                        Oct 10: Predicted $110K support → Correct
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Brendan Market Canary -->
+            <div class="trader-card">
+                <div class="trader-header accuracy-low">
+                    <div class="rank-badge">#6 Inconsistent</div>
+                    <h2>Brendan (Market Canary)</h2>
+                    <div class="handle">@BrendanMarketCanary</div>
+                </div>
+                <div class="trader-content">
+                    <div class="target-section">
+                        <div class="target-price" style="font-size: 1.5em;">
+                            <span style="text-decoration: line-through; opacity: 0.5;">$168K</span> → $140-150K
+                        </div>
+                        <div class="target-label">Target SHIFTED Nov→Dec</div>
+                    </div>
+                    
+                    <div class="metrics">
+                        <div class="metric">
+                            <div class="metric-value" style="color: #ee0979;">35-45%</div>
+                            <div class="metric-label">Historical Accuracy</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value" style="color: #ee0979;">15-20%</div>
+                            <div class="metric-label">"ATH Is In"</div>
+                        </div>
+                    </div>
+                    
+                    <div class="sentiment-bars">
+                        <div class="sentiment-bar">
+                            <div class="sentiment-label">🐂 Bullish: 70%</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill bullish-bar" style="width: 70%;">70%</div>
+                            </div>
+                        </div>
+                        <div class="sentiment-bar">
+                            <div class="sentiment-label">🐻 Bearish: 30%</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill bearish-bar" style="width: 30%;">30%</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="indicators">
+                        <h3>📈 Key Indicators</h3>
+                        <ul>
+                            <li>Fibonacci ratios (2.0, 2.618)</li>
+                            <li>W-fractal patterns</li>
+                            <li>RMA warning lines (69K rule)</li>
+                            <li>Lunar cycle timing</li>
+                            <li>Elliott Wave structures</li>
+                            <li>"Beach ball" indicator</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="stance">
+                        <strong>October Stance:</strong> INCONSISTENT. Originally "$168K November 2025, $132K easily hit." Latest: "$140-150K by December" with NO mention of $168K. RMA at 62K needs to cross 69K to trigger 30-day countdown.
+                    </div>
+                    
+                    <div class="warning">
+                        <div class="warning-title">🚨 Major Red Flags</div>
+                        ❌ "$132K easily hit" - never reached<br>
+                        ❌ Contradicted 2026 outlook (no collapse → 75% crash)<br>
+                        ❌ Timeline shift Nov→Dec without explanation<br>
+                        ❌ Dropped $168K target completely<br>
+                        ❌ 8-day delay addressing Oct 6 liquidation
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Comparison Matrix -->
+        <div class="comparison-matrix">
+            <div class="matrix-title">📊 Side-by-Side Comparison - All 6 Traders</div>
+            <table class="matrix-table">
+                <thead>
+                    <tr>
+                        <th>Trader</th>
+                        <th>Target</th>
+                        <th>Accuracy</th>
+                        <th>ATH Is In</th>
+                        <th>Bullish/Bearish</th>
+                        <th>Reliability</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Rekt Capital</strong></td>
+                        <td>$150-200K</td>
+                        <td><strong>85-90%</strong></td>
+                        <td>25-30%</td>
+                        <td>70-75% / 25-30%</td>
+                        <td>⭐⭐⭐⭐⭐</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Jason Pizzino</strong></td>
+                        <td>$130-160K</td>
+                        <td><strong>80-85%</strong></td>
+                        <td>45-50%</td>
+                        <td>50-55% / 45-50%</td>
+                        <td>⭐⭐⭐⭐⭐</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Didi Taihuttu</strong></td>
+                        <td>$160K</td>
+                        <td><strong>75-80%</strong></td>
+                        <td>15-20%</td>
+                        <td>75-80% / 20-25%</td>
+                        <td>⭐⭐⭐⭐</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Michael Pizzino</strong></td>
+                        <td>$136K</td>
+                        <td><strong>70-75%</strong></td>
+                        <td>20-25%</td>
+                        <td>75% / 25%</td>
+                        <td>⭐⭐⭐⭐</td>
+                    </tr>
+                    <tr style="background: #e7f3ff;">
+                        <td><strong>Gareth Soloway 🆕</strong></td>
+                        <td>$126-130K ✅</td>
+                        <td><strong>70-75%</strong></td>
+                        <td>20-25%</td>
+                        <td>45% / 55%</td>
+                        <td>⭐⭐⭐⭐</td>
+                    </tr>
+                    <tr style="background: #fff3cd;">
+                        <td><strong>Brendan</strong></td>
+                        <td><s>$168K</s> → $140-150K</td>
+                        <td><strong style="color: #dc3545;">35-45%</strong></td>
+                        <td>15-20%</td>
+                        <td>70% / 30%</td>
+                        <td>⭐⭐</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Final Verdict -->
+        <div class="verdict">
+            <h2>🎯 Final Verdict - Weighted Consensus (6 Traders)</h2>
+            <div class="verdict-content">
+                <div class="verdict-stat">📈 60-65% Probability: Bitcoin continues to $140-160K (Nov-Dec 2025)</div>
+                <div class="verdict-stat">📉 35-40% Probability: $126K (Oct 6) was the cycle top</div>
+                
+                <p style="margin-top: 20px; font-size: 1.1em;">
+                    <strong>Most Trustworthy Voice:</strong> Rekt Capital (85-90% accuracy) - "Time-wise it's time to peak, but price structure hasn't confirmed yet"
+                </p>
+                
+                <p style="margin-top: 15px; font-size: 1.1em;">
+                    <strong>Most Honest Voice:</strong> Jason Pizzino (80-85% accuracy) - Genuine 50/50 uncertainty acknowledges real risk
+                </p>
+                
+                <p style="margin-top: 15px; font-size: 1.1em;">
+                    <strong>Best Short-Term Calls:</strong> Gareth Soloway - Nailed $126K top and $110K support with precision
+                </p>
+                
+                <p style="margin-top: 15px; font-size: 1.1em;">
+                    <strong>The November Test:</strong> Next 4 weeks CRITICAL. Bitcoin breaks $115-120K → bullish case strengthens. Fails to pump → bearish case confirmed.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Animate progress bars on load
+        window.addEventListener('load', () => {
+            const fills = document.querySelectorAll('.progress-fill');
+            fills.forEach(fill => {
+                const width = fill.style.width;
+                fill.style.width = '0';
+                setTimeout(() => {
+                    fill.style.width = width;
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>
