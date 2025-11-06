@@ -45,14 +45,14 @@
       "handle": "@JasonPizzinoOfficial",
       "accuracy": "80-85%",
       "target": "$130,000 - $160,000",
-      "athIsIn": "45-50%",
-      "bullishPercent": 53,
-      "bearishPercent": 47,
+      "athIsIn": "60-65%",
+      "bullishPercent": 35,
+      "bearishPercent": 65,
       "keyLevels": [
-        "Support: 21-week EMA (~$105K)",
-        "Critical: 50% Fib retracement level ($100K)",
-        "Resistance: Mid-$130Ks breakout",
-        "Major: $160K cycle top target"
+        "Resistance: $105-108K (must break and hold)",
+        "Major Resistance: $112-113K, then $116K (critical)",
+        "USDT.D broke above 5.2% (bearish - capital flight)",
+        "Bitcoin underperforming: Gold, Silver, S&P, NASDAQ"
       ],
       "milestones": [
         {
@@ -60,16 +60,37 @@
           "status": "achieved"
         },
         {
-          "text": "Nov 4: Complacency setting in, lacks rally confirmation",
+          "text": "Nov 5-6: More bearish - suggests top may be in at $108K",
           "status": "warning"
         },
         {
-          "text": "Watching $100K (50% Fib) and USDT dominance",
-          "status": "pending"
+          "text": "Liquidity leaving Bitcoin permanently (not just rotating)",
+          "status": "failed"
+        },
+        {
+          "text": "USDT.D broke above 5.2% - bearish confirmation",
+          "status": "warning"
         }
       ],
-      "latestUpdate": "Nov 4: 'Bitcoin Crash: Complacency Is Making a Comeback' - Still maintains 50/50 uncertain stance. Watching $100K 50% Fib level. USDT dominance climbing (bearish sign). Mentioned possibility of extended cycle into 2026.",
-      "latestVideoUrl": "https://www.youtube.com/watch?v=LL9-b6fqdk0",
+      "latestUpdate": "Nov 4-6: Three videos this week. Nov 5 'Bitcoin Capitulation' - More bearish, suggests Bitcoin may have topped at $108K, but uncertain if another rally comes in 2026-27. Nov 6 'Why Liquidity is Leaving Bitcoin' - Bearish: Bitcoin flat 11 months, liquidity leaving permanently, underperforming all major assets (gold/silver/stocks). USDT dominance broke above 5.2% (bearish confirmation). Watching $105-108K resistance.",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=VbBVXnAg5Jk",
+      "recentVideos": [
+        {
+          "date": "Nov 6",
+          "title": "Why Liquidity is Leaving Bitcoin and Not Returning",
+          "url": "https://www.youtube.com/watch?v=VbBVXnAg5Jk"
+        },
+        {
+          "date": "Nov 5",
+          "title": "Bitcoin Capitulation: Everything Is Hinging On This",
+          "url": "https://www.youtube.com/watch?v=LL9-b6fqdk0"
+        },
+        {
+          "date": "Nov 4",
+          "title": "Bitcoin Crash: Complacency Is Making a Comeback",
+          "url": "https://www.youtube.com/watch?v=LL9-b6fqdk0"
+        }
+      ],
       "rank": "#2 Most Honest",
       "reliability": 5
     },
@@ -154,10 +175,10 @@
       "bullishPercent": 45,
       "bearishPercent": 55,
       "keyLevels": [
-        "Major Resistance: $126K-$127K (trendline from 2011/2017/2021)",
-        "Critical Support: $110K (tested multiple times)",
-        "Major Buy Level: $93K-$95K (long-term support)",
-        "Breakdown Confirmation: Below $110K = bearish"
+        "Target: $93K-$95K (major trendline - swing trade long)",
+        "Support: $98K-$99K (pivot low)",
+        "Bounce Expected: $100K (even number psychology)",
+        "Head & Shoulders: $96,600 target confirmed"
       ],
       "milestones": [
         {
@@ -169,15 +190,24 @@
           "status": "achieved"
         },
         {
-          "text": "Monitoring $110K breakdown confirmation",
+          "text": "Nov 5: Bitcoin heading to $93-95K target (on its way)",
           "status": "pending"
         },
         {
-          "text": "Watching for $93K-$95K major buy opportunity",
+          "text": "Head & Shoulders pattern confirms $96,600 target",
+          "status": "warning"
+        },
+        {
+          "text": "Small bounce expected at $100K (even number)",
+          "status": "pending"
+        },
+        {
+          "text": "Watching for $93K-$95K major buy opportunity (swing trade long)",
           "status": "pending"
         }
       ],
-      "latestUpdate": "No new update this week",
+      "latestUpdate": "Nov 5: 'Market Sell-Off Accelerates' - Bearish short-term. Target remains $93-95K (on its way there). Watching $100K for small bounce, $98-99K support. Head & Shoulders pattern confirms $96,600 target. Plans swing trade long at $93-95K trendline (make or break level). Warns against false breakouts.",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=0vNbCRFYuX4",
       "isNew": true,
       "rank": "🆕 NEW #5",
       "reliability": 4
@@ -216,18 +246,18 @@
           "status": "warning"
         }
       ],
-      "latestUpdate": "Nov 3: 'Bitcoin - The Shakeout Before $150k' - Target SHIFTED AGAIN from $168K to $140-150K. Timeline pushed to December. Views current action as 'shakeout'. Key support $103,580. Early warning: Still 6000 points from crossing $69K.",
+      "latestUpdate": "Nov 3: 'Bitcoin - The Shakeout Before $150k' - Target SHIFTED AGAIN from $168K to $140-150K (December). Retracement 17-18% (could reach 20%). Critical support $103,580 must hold. Resistance $116,400 must break for new ATHs. Nov 5th lunar cycle pivot (expects low then upward). S&P 1% from ATH, NASDAQ <300 pts from ATH. Fear & Greed at 46 (expects greed at top). Views dip as buying opportunity ($100-106K range).",
       "latestVideoUrl": "https://www.youtube.com/watch?v=JA9w7_iGLfY",
       "rank": "#6 Inconsistent",
       "reliability": 2
     }
   ],
   "consensus": {
-    "probabilityUp": "60-65%",
+    "probabilityUp": "50-55%",
     "targetRange": "$140K-$160K",
     "timeframe": "Nov-Dec 2025",
     "mostTrustworthy": "Rekt Capital (85-90% accuracy)",
-    "mostHonest": "Jason Pizzino (genuine 50/50 uncertainty)",
+    "mostHonest": "Jason Pizzino (turning bearish - liquidity leaving)",
     "bestShortTerm": "Gareth Soloway (nailed $126K top)"
   },
   "keyEvents": [
