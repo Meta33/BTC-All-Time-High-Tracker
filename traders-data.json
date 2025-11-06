@@ -1,0 +1,263 @@
+{
+  "lastUpdated": "2025-11-09",
+  "bitcoinPrice": 104336,
+  "bitcoinATH": 126000,
+  "athDate": "October 6, 2025",
+  "weekRange": "Nov 3-9, 2025",
+  "priceChangePercent": -17.2,
+  "traders": [
+    {
+      "id": "rekt",
+      "name": "Rekt Capital",
+      "handle": "@rektcapital",
+      "accuracy": "85-90%",
+      "target": "$150,000 - $200,000",
+      "athIsIn": "25-30%",
+      "bullishPercent": 73,
+      "bearishPercent": 27,
+      "keyLevels": [
+        "CRITICAL: 21-week EMA (~$111K) - Must reclaim (Nov 2 update)",
+        "Support: $100K (50% Fib + historical)",
+        "Resistance: $115-120K breakout zone",
+        "Confirmation: Weekly close above $111K"
+      ],
+      "milestones": [
+        {
+          "text": "Bitcoin dropped 17% - testing 21-week EMA",
+          "status": "warning"
+        },
+        {
+          "text": "Nov 2: Must reclaim $111K (21-week EMA) for bullish continuation",
+          "status": "pending"
+        },
+        {
+          "text": "Awaiting breakout above $115-120K zone",
+          "status": "pending"
+        }
+      ],
+      "latestUpdate": "Nov 2: Bitcoin approaching 21-week EMA retest (~$111K). Needs weekly close above $111K to reclaim as support.",
+      "rank": "#1 Most Accurate",
+      "reliability": 5
+    },
+    {
+      "id": "jason",
+      "name": "Jason Pizzino",
+      "handle": "@JasonPizzinoOfficial",
+      "accuracy": "80-85%",
+      "target": "$130,000 - $160,000",
+      "athIsIn": "45-50%",
+      "bullishPercent": 53,
+      "bearishPercent": 47,
+      "keyLevels": [
+        "Support: 21-week EMA (~$105K)",
+        "Critical: 50% Fib retracement level ($100K)",
+        "Resistance: Mid-$130Ks breakout",
+        "Major: $160K cycle top target"
+      ],
+      "milestones": [
+        {
+          "text": "35-month bull market mark reached (October)",
+          "status": "achieved"
+        },
+        {
+          "text": "Nov 4: Complacency setting in, lacks rally confirmation",
+          "status": "warning"
+        },
+        {
+          "text": "Watching $100K (50% Fib) and USDT dominance",
+          "status": "pending"
+        }
+      ],
+      "latestUpdate": "Nov 4: 'Bitcoin Crash: Complacency Is Making a Comeback' - Still maintains 50/50 uncertain stance. Watching $100K 50% Fib level. USDT dominance climbing (bearish sign). Mentioned possibility of extended cycle into 2026.",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=LL9-b6fqdk0",
+      "rank": "#2 Most Honest",
+      "reliability": 5
+    },
+    {
+      "id": "didi",
+      "name": "Didi Taihuttu",
+      "handle": "@TheBitcoinfamily",
+      "accuracy": "75-80%",
+      "target": "$160,000 (Nov-Dec 2025)",
+      "athIsIn": "15-20%",
+      "bullishPercent": 78,
+      "bearishPercent": 22,
+      "keyLevels": [
+        "Target: Upper Gaussian channel ($160K)",
+        "Deadline: November 28, 2025 (4-week window)",
+        "Support: Gaussian channel at $108K",
+        "Critical Support: Mid-Gaussian at $99K"
+      ],
+      "milestones": [
+        {
+          "text": "October ATH achieved ($126K)",
+          "status": "achieved"
+        },
+        {
+          "text": "Oct 31: Volatile weekend ahead, needs to hold $108K",
+          "status": "warning"
+        },
+        {
+          "text": "Critical: Nov 28 deadline approaching (4 weeks left!)",
+          "status": "pending"
+        },
+        {
+          "text": "Watching Gaussian channel support at $99K",
+          "status": "pending"
+        }
+      ],
+      "latestUpdate": "Oct 31: 'WARNING! VOLATILE BITCOIN WEEKEND AHEAD!!!' - Still bullish on November pump to $160K. Gaussian channel top at $108K needs to hold. Retail owns 71% of Bitcoin. Fed QT ending Dec 1st (positive). Nov 28 deadline critical.",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=Z8qWJMQdZLQ",
+      "rank": "#3 November Bull",
+      "reliability": 4
+    },
+    {
+      "id": "michael",
+      "name": "Michael Pizzino",
+      "handle": "@MichaelPizzino",
+      "accuracy": "70-75%",
+      "target": "$136,000 (Wave 5 extension)",
+      "athIsIn": "20-25%",
+      "bullishPercent": 75,
+      "bearishPercent": 25,
+      "keyLevels": [
+        "Current: Wave 3 consolidation ($126K)",
+        "Breakout: $114K → $116K → $120K",
+        "Target: $136K Wave 5 peak",
+        "Invalidation: $108K weekly close"
+      ],
+      "milestones": [
+        {
+          "text": "Wave 3 peak confirmed at $126K",
+          "status": "achieved"
+        },
+        {
+          "text": "Awaiting Wave 4 correction completion",
+          "status": "pending"
+        },
+        {
+          "text": "Target: Wave 5 extension into 2026",
+          "status": "pending"
+        }
+      ],
+      "latestUpdate": "No new update this week",
+      "rank": "#4 Technical Pro",
+      "reliability": 4
+    },
+    {
+      "id": "gareth",
+      "name": "Gareth Soloway",
+      "handle": "@GarethSoloway",
+      "accuracy": "70-75%",
+      "target": "$126,000 - $130,000 (achieved!)",
+      "athIsIn": "20-25%",
+      "bullishPercent": 45,
+      "bearishPercent": 55,
+      "keyLevels": [
+        "Major Resistance: $126K-$127K (trendline from 2011/2017/2021)",
+        "Critical Support: $110K (tested multiple times)",
+        "Major Buy Level: $93K-$95K (long-term support)",
+        "Breakdown Confirmation: Below $110K = bearish"
+      ],
+      "milestones": [
+        {
+          "text": "Successfully predicted $126K top (Oct 2) - Hit $126.2K (Oct 6)",
+          "status": "achieved"
+        },
+        {
+          "text": "Predicted $110K support level - tested multiple times",
+          "status": "achieved"
+        },
+        {
+          "text": "Monitoring $110K breakdown confirmation",
+          "status": "pending"
+        },
+        {
+          "text": "Watching for $93K-$95K major buy opportunity",
+          "status": "pending"
+        }
+      ],
+      "latestUpdate": "No new update this week",
+      "isNew": true,
+      "rank": "🆕 NEW #5",
+      "reliability": 4
+    },
+    {
+      "id": "brendan",
+      "name": "Brendan (Market Canary)",
+      "handle": "@BrendanMarketCanary",
+      "accuracy": "35-45%",
+      "target": "$140,000 - $150,000 (shifted AGAIN)",
+      "targetNote": "Nov 3: Reduced from $168K → Now targeting December",
+      "athIsIn": "15-20%",
+      "bullishPercent": 70,
+      "bearishPercent": 30,
+      "keyLevels": [
+        "Critical Support: $103,580 (must hold)",
+        "Support: $100K (27 RMA), $98K (next level)",
+        "Resistance: $116,400 (must break for new ATHs)",
+        "Lunar Cycle: Nov 5th pivot point expected"
+      ],
+      "milestones": [
+        {
+          "text": "Dropped $168K target (inconsistency continues)",
+          "status": "failed"
+        },
+        {
+          "text": "$132K 'easily' prediction FAILED",
+          "status": "failed"
+        },
+        {
+          "text": "Nov 3: Target adjusted AGAIN to $140-150K",
+          "status": "warning"
+        },
+        {
+          "text": "Timeline shifted: November → December (again)",
+          "status": "warning"
+        }
+      ],
+      "latestUpdate": "Nov 3: 'Bitcoin - The Shakeout Before $150k' - Target SHIFTED AGAIN from $168K to $140-150K. Timeline pushed to December. Views current action as 'shakeout'. Key support $103,580. Early warning: Still 6000 points from crossing $69K.",
+      "latestVideoUrl": "https://www.youtube.com/watch?v=JA9w7_iGLfY",
+      "rank": "#6 Inconsistent",
+      "reliability": 2
+    }
+  ],
+  "consensus": {
+    "probabilityUp": "60-65%",
+    "targetRange": "$140K-$160K",
+    "timeframe": "Nov-Dec 2025",
+    "mostTrustworthy": "Rekt Capital (85-90% accuracy)",
+    "mostHonest": "Jason Pizzino (genuine 50/50 uncertainty)",
+    "bestShortTerm": "Gareth Soloway (nailed $126K top)"
+  },
+  "keyEvents": [
+    {
+      "date": "October 6, 2025",
+      "event": "Bitcoin reaches $126,000 ATH"
+    },
+    {
+      "date": "November 2, 2025",
+      "event": "Rekt: Bitcoin approaching 21-week EMA retest (~$111K)"
+    },
+    {
+      "date": "November 5, 2025",
+      "event": "Brendan: Lunar cycle pivot point (expected low formation)"
+    },
+    {
+      "date": "November 28, 2025",
+      "event": "Didi's 4-week deadline (call bull market end if no pump)"
+    },
+    {
+      "date": "November-December 2025",
+      "event": "Critical period for $140K-$160K breakout"
+    }
+  ],
+  "marketContext": {
+    "fearGreedIndex": 46,
+    "fearGreedStatus": "Neutral (was extreme fear at 21)",
+    "sp500Status": "Only 1% from ATH",
+    "nasdaqStatus": "Less than 300 points from ATH",
+    "criticalSupport": "$100K (50% Fib + 27 RMA)",
+    "criticalResistance": "$111K (21-week EMA)"
+  }
+}
