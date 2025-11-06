@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin ATH Prediction Tracker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #ffffff;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        .ath-info {
+            display: inline-block;
+            background: rgba(255, 215, 0, 0.2);
+            padding: 15px 30px;
+            border-radius: 10px;
+            margin-top: 15px;
+            border: 2px solid rgba(255, 215, 0, 0.5);
+        }
+
+        .current-price {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #ffd700;
+            margin-top: 10px;
+        }
+
+        .price-alert {
+            font-size: 0.9em;
+            margin-top: 8px;
+            color: #ff6b6b;
+        }
+
+        .tracker-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .trader-card {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .trader-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .trader-card.new-trader {
+            border: 2px solid #ffd700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .trader-card.new-trader::before {
+            content: "NEW";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #ffd700;
+            color: #1e3c72;
+            padding: 5px 12px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 0.8em;
+        }
+
+        .trader-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .trader-name {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        .accuracy {
+            background: rgba(76, 175, 80, 0.3);
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            border: 1px solid rgba(76, 175, 80, 0.5);
+        }
+
+        .accuracy.low {
+            background: rgba(255, 152, 0, 0.3);
+            border-color: rgba(255, 152, 0, 0.5);
+        }
+
+        .prediction-section {
+            margin: 15px 0;
+        }
+
+        .section-title {
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .prediction-value {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+
+        .target-note {
+            font-size: 0.9em;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+
+        .key-levels {
+            list-style: none;
+            padding: 0;
+        }
+
+        .key-levels li {
+            padding: 8px 12px;
+            margin: 5px 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            border-left: 3px solid #ffd700;
+        }
+
+        .sentiment-bar {
+            height: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            margin: 10px 0;
+        }
+
+        .sentiment-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4caf50 0%, #8bc34a 100%);
+            transition: width 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .milestones {
+            margin-top: 15px;
+        }
+
+        .milestone {
+            padding: 10px;
+            margin: 8px 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            border-left: 4px solid #2196F3;
+        }
+
+        .milestone.achieved {
+            border-left-color: #4caf50;
+            background: rgba(76, 175, 80, 0.2);
+        }
+
+        .milestone.achieved::before {
+            content: "✓ ";
+            color: #4caf50;
+            font-weight: bold;
+        }
+
+        .milestone.warning {
+            border-left-color: #ff9800;
+            background: rgba(255, 152, 0, 0.2);
+        }
+
+        .milestone.warning::before {
+            content: "⚠️ ";
+        }
+
+        .milestone.failed {
+            border-left-color: #f44336;
+            background: rgba(244, 67, 54, 0.2);
+        }
+
+        .milestone.failed::before {
+            content: "✗ ";
+            color: #f44336;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            opacity: 0.8;
+        }
+
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            font-size: 1.2em;
+        }
+
+        @media (max-width: 768px) {
+            .tracker-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Bitcoin All-Time High Prediction Tracker</h1>
+            <p class="subtitle" id="subtitle">Loading...</p>
+            <div class="ath-info">
+                <div><strong>Bitcoin ATH:</strong> <span id="athPrice">Loading...</span></div>
+                <div class="current-price" id="currentPrice">Current: Loading...</div>
+                <div class="price-alert" id="priceAlert"></div>
+            </div>
+        </header>
+
+        <div class="tracker-grid" id="traderGrid">
+            <div class="loading">Loading traders...</div>
+        </div>
+
+        <footer>
+            <p><strong>Analysis Period:</strong> <span id="analysisPeriod">Loading...</span> | <strong>Last Updated:</strong> <span id="lastUpdated">Loading...</span></p>
+            <p style="margin-top: 10px; opacity: 0.8;">This tracker monitors crypto analyst predictions for educational purposes only. Not financial advice.</p>
+            <p style="margin-top: 10px;">
+                <a href="index.html">← Back to Home</a> | 
+                <a href="trader_comparison_infographic.html">View Full Comparison →</a>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Load data from JSON file
+        fetch('traders-data.json')
+            .then(response => response.json())
+            .then(data => {
+                // Update header
+                document.getElementById('subtitle').textContent = `Tracking ${data.traders.length} Top Crypto Analysts | ${data.weekRange}`;
+                document.getElementById('athPrice').textContent = `$${data.bitcoinATH.toLocaleString()} (${data.athDate})`;
+                document.getElementById('currentPrice').textContent = `Current: $${data.bitcoinPrice.toLocaleString()}`;
+                
+                // Price alert
+                if (data.priceChangePercent !== 0) {
+                    const alertEl = document.getElementById('priceAlert');
+                    alertEl.textContent = `${data.priceChangePercent > 0 ? '▲' : '▼'} ${Math.abs(data.priceChangePercent)}% from ATH | ${data.weekRange}`;
+                    alertEl.style.color = data.priceChangePercent > 0 ? '#51cf66' : '#ff6b6b';
+                }
+                
+                document.getElementById('analysisPeriod').textContent = 'October-November 2025';
+                document.getElementById('lastUpdated').textContent = data.lastUpdated;
+                
+                // Generate trader cards
+                const grid = document.getElementById('traderGrid');
+                grid.innerHTML = '';
+                
+                data.traders.forEach(trader => {
+                    const card = document.createElement('div');
+                    card.className = `trader-card${trader.isNew ? ' new-trader' : ''}`;
+                    
+                    // Determine accuracy class
+                    const accuracyClass = parseInt(trader.accuracy) < 50 ? ' low' : '';
+                    
+                    // Build milestones HTML
+                    const milestonesHTML = trader.milestones.map(m => {
+                        const statusClass = m.status || 'pending';
+                        return `<div class="milestone ${statusClass}">${m.text}</div>`;
+                    }).join('');
+                    
+                    card.innerHTML = `
+                        <div class="trader-header">
+                            <div class="trader-name">${trader.name}</div>
+                            <div class="accuracy${accuracyClass}">${trader.accuracy}</div>
+                        </div>
+                        
+                        <div class="prediction-section">
+                            <div class="section-title">Price Target</div>
+                            <div class="prediction-value">${trader.target}</div>
+                            ${trader.targetNote ? `<div class="target-note">${trader.targetNote}</div>` : ''}
+                        </div>
+
+                        <div class="prediction-section">
+                            <div class="section-title">Key Levels to Watch</div>
+                            <ul class="key-levels">
+                                ${trader.keyLevels.map(level => `<li>${level}</li>`).join('')}
+                            </ul>
+                        </div>
+
+                        <div class="prediction-section">
+                            <div class="section-title">Current Sentiment</div>
+                            <div class="sentiment-bar">
+                                <div class="sentiment-fill" style="width: ${trader.bullishPercent}%">${trader.bullishPercent}% Bullish</div>
+                            </div>
+                        </div>
+
+                        <div class="milestones">
+                            <div class="section-title">Milestones</div>
+                            ${milestonesHTML}
+                        </div>
+                    `;
+                    
+                    grid.appendChild(card);
+                });
+            })
+            .catch(error => {
+                console.error('Error loading data:', error);
+                document.getElementById('traderGrid').innerHTML = '<div class="loading" style="color: #ff6b6b;">Error loading data. Please make sure traders-data.json is in the same folder.</div>';
+            });
+    </script>
+</body>
+</html>
