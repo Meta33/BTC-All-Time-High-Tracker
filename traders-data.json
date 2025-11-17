@@ -1,18 +1,26 @@
 {
-  "lastUpdated": "2025-11-17",
+  "lastUpdated": "Nov 17, 2025",
   "weekRange": "Nov 17-23, 2025",
-  "currentBTCPrice": 95628,
-  "previousATH": 126000,
-  "percentFromATH": -24.1,
+  "bitcoinATH": 126000,
+  "bitcoinPrice": 95628,
+  "priceChangePercent": -24.1,
+  "consensus": {
+    "probabilityUp": "49%",
+    "targetRange": "$35K - $152K",
+    "overallSentiment": "Mixed with Bearish Lean"
+  },
   "traders": [
     {
-      "id": 1,
       "name": "Rekt Capital",
+      "accuracy": "75-80%",
+      "target": "N/A - Critical Decision Point",
+      "stance": "Neutral (50/50)",
+      "isNew": false,
+      "latestUpdate": "Testing 50-week EMA at last saving grace - Nov 7",
       "avatar": "https://yt3.googleusercontent.com/DrehJ3ue98i7dRWHawv-Lt31Q5ae4I1bNiXhbqvUjZFW-wy50DRi_JgpxbLeQkTXXLKwQVJ5=s160-c-k-c0x00ffffff-no-rj",
       "twitter": "https://x.com/rektcapital",
       "youtube": "https://www.youtube.com/@rektcapital",
       "bullishPercent": 50,
-      "stance": "Neutral",
       "stanceClass": "neutral",
       "lastVideoDate": "Nov 7, 2025",
       "lastVideoTitle": "What's The Worst Case Scenario For Bitcoin Right Now?",
@@ -27,48 +35,19 @@
       "targetPrice": "N/A",
       "timeline": "Critical decision point now",
       "reasoning": "At pivotal technical moment - 50-week EMA has been reliable bull/bear indicator historically. 500 days post-halving aligns with previous cycle tops. RSI 44.5 is key line in sand. Neutral stance reflects genuine uncertainty at major inflection point.",
-      "confidenceLevel": "Medium",
-      "milestones": [
-        {
-          "price": 126000,
-          "label": "Previous ATH",
-          "achieved": false,
-          "class": "ath"
-        },
-        {
-          "price": 116000,
-          "label": "Bull Market Confirmation",
-          "achieved": false,
-          "class": "target"
-        },
-        {
-          "price": 95628,
-          "label": "Current Price",
-          "achieved": true,
-          "class": "current"
-        },
-        {
-          "price": 93000,
-          "label": "50-Week EMA Support",
-          "achieved": false,
-          "class": "support"
-        },
-        {
-          "price": 85000,
-          "label": "Bear Market if Lost",
-          "achieved": false,
-          "class": "risk"
-        }
-      ]
+      "confidenceLevel": "Medium"
     },
     {
-      "id": 2,
       "name": "Jason Pizzino",
+      "accuracy": "70-75%",
+      "target": "$35K - $55K",
+      "stance": "Bearish (25%)",
+      "isNew": false,
+      "latestUpdate": "Broke 50-week MA, death cross formed - bear market begun - Nov 17",
       "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_n_EbOI_4AC7kbLQmm9rGdefxBzJBHylDv3dd_x01ntlw=s160-c-k-c0x00ffffff-no-rj",
       "twitter": "https://x.com/jasonpizzino",
       "youtube": "https://www.youtube.com/@JasonPizzino",
       "bullishPercent": 25,
-      "stance": "Bearish",
       "stanceClass": "bearish",
       "lastVideoDate": "Nov 17, 2025",
       "lastVideoTitle": "Bitcoin Breaks Bull Market Support: This Happens Next",
@@ -83,60 +62,19 @@
       "targetPrice": "$35,000 - $55,000",
       "timeline": "Long-term bear market (12-18 months)",
       "reasoning": "Breaking 50-week MA has been reliable bear market signal in previous cycles. Death cross confirmation adds weight. Historical 60-70% corrections from cycle highs suggest $35K-$55K targets. Short-term bounces are normal in bear markets but don't change overall trend.",
-      "confidenceLevel": "High",
-      "milestones": [
-        {
-          "price": 126000,
-          "label": "Previous ATH",
-          "achieved": false,
-          "class": "ath"
-        },
-        {
-          "price": 116000,
-          "label": "Bull Invalidation Level",
-          "achieved": false,
-          "class": "target"
-        },
-        {
-          "price": 100000,
-          "label": "Complacency Bounce Target",
-          "achieved": false,
-          "class": "resistance"
-        },
-        {
-          "price": 95628,
-          "label": "Current Price",
-          "achieved": true,
-          "class": "current"
-        },
-        {
-          "price": 93000,
-          "label": "50-Week MA (Broken)",
-          "achieved": true,
-          "class": "broken"
-        },
-        {
-          "price": 55000,
-          "label": "Bear Target (High)",
-          "achieved": false,
-          "class": "target"
-        },
-        {
-          "price": 35000,
-          "label": "Bear Target (Low)",
-          "achieved": false,
-          "class": "target"
-        }
-      ]
+      "confidenceLevel": "High"
     },
     {
-      "id": 3,
       "name": "Didi Taihuttu",
+      "accuracy": "65-70%",
+      "target": "$65K",
+      "stance": "Bearish (30%)",
+      "isNew": false,
+      "latestUpdate": "Bear market began - lost 50-week MA and Gaussian Channel - Nov 17",
       "avatar": "https://yt3.googleusercontent.com/A2F7yU2yDykhole_Z_IvW1z3NHfEyOmVDK2gJWNLUzXM_vXW7K9vDGy2YmeL3pXJFTXrtkAXOg=s160-c-k-c0x00ffffff-no-rj",
       "twitter": "https://x.com/diditaihuttu",
       "youtube": "https://www.youtube.com/@TheBitcoinFamily",
       "bullishPercent": 30,
-      "stance": "Bearish",
       "stanceClass": "bearish",
       "lastVideoDate": "Nov 17, 2025",
       "lastVideoTitle": "BITCOIN BEAR MARKET BEGINS ???",
@@ -151,54 +89,19 @@
       "targetPrice": "$65,000",
       "timeline": "12 months",
       "reasoning": "Gaussian Channel and 50-week MA have been reliable indicators across multiple cycles. Monthly close below these levels historically leads to extended bear markets. $65K represents major support zone from previous cycle. Short-term bounces are typical before continuation lower.",
-      "confidenceLevel": "High",
-      "milestones": [
-        {
-          "price": 126000,
-          "label": "Previous ATH",
-          "achieved": false,
-          "class": "ath"
-        },
-        {
-          "price": 100000,
-          "label": "Short-term Bounce Target",
-          "achieved": false,
-          "class": "resistance"
-        },
-        {
-          "price": 97000,
-          "label": "Bounce Support",
-          "achieved": false,
-          "class": "resistance"
-        },
-        {
-          "price": 95628,
-          "label": "Current Price",
-          "achieved": true,
-          "class": "current"
-        },
-        {
-          "price": 93000,
-          "label": "50-Week MA (Lost)",
-          "achieved": true,
-          "class": "broken"
-        },
-        {
-          "price": 65000,
-          "label": "12-Month Target",
-          "achieved": false,
-          "class": "target"
-        }
-      ]
+      "confidenceLevel": "High"
     },
     {
-      "id": 4,
       "name": "Michael Pizzino",
+      "accuracy": "70-75%",
+      "target": "$150K+",
+      "stance": "Cautiously Bullish (65%)",
+      "isNew": false,
+      "latestUpdate": "Bull NOT over - extreme fear = buy signal, $88K-$92K must hold - Nov 17",
       "avatar": "https://yt3.googleusercontent.com/DrehJ3ue98i7dRWHawv-Lt31Q5ae4I1bNiXhbqvUjZFW-wy50DRi_JgpxbLeQkTXXLKwQVJ5=s160-c-k-c0x00ffffff-no-rj",
       "twitter": "https://x.com/michaelpizzino",
       "youtube": "https://www.youtube.com/@MichaelPizzino",
       "bullishPercent": 65,
-      "stance": "Cautiously Bullish",
       "stanceClass": "bullish",
       "lastVideoDate": "Nov 17, 2025",
       "lastVideoTitle": "EVERYONE is bearish... do you know what that means?",
@@ -213,60 +116,19 @@
       "targetPrice": "$150,000+",
       "timeline": "6-9 months",
       "reasoning": "Historical bull markets see 20-30% corrections regularly. Current fear levels match previous cycle bottoms. Breaking below previous cycle high ($108K) is concern but has precedent in 2017 cycle. $88K-$92K represents major Fibonacci and volume support. Contrarian indicator suggests capitulation near.",
-      "confidenceLevel": "Medium-High",
-      "milestones": [
-        {
-          "price": 150000,
-          "label": "Bull Target",
-          "achieved": false,
-          "class": "target"
-        },
-        {
-          "price": 126000,
-          "label": "Previous ATH",
-          "achieved": false,
-          "class": "ath"
-        },
-        {
-          "price": 116000,
-          "label": "Reclaim Bull Trend",
-          "achieved": false,
-          "class": "resistance"
-        },
-        {
-          "price": 108000,
-          "label": "Previous Cycle Peak (Broken)",
-          "achieved": true,
-          "class": "broken"
-        },
-        {
-          "price": 95628,
-          "label": "Current Price",
-          "achieved": true,
-          "class": "current"
-        },
-        {
-          "price": 92000,
-          "label": "Critical Support (High)",
-          "achieved": false,
-          "class": "support"
-        },
-        {
-          "price": 88000,
-          "label": "Critical Support (Low)",
-          "achieved": false,
-          "class": "support"
-        }
-      ]
+      "confidenceLevel": "Medium-High"
     },
     {
-      "id": 5,
       "name": "Gareth Soloway",
+      "accuracy": "70-75%",
+      "target": "$73K-$75K then $150K+",
+      "stance": "Bearish Short-term (40%)",
+      "isNew": false,
+      "latestUpdate": "6th test of bull trend line at $93K, expects $73K-$75K - Nov 17",
       "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_mH3Jf4az3LP_Y4bbZgBUsM4wO-eXJHvLcHLGYn_xV3ZQ=s160-c-k-c0x00ffffff-no-rj",
       "twitter": "https://x.com/garethsoloway",
       "youtube": "https://www.youtube.com/@GarethSoloway",
       "bullishPercent": 40,
-      "stance": "Bearish Short-term, Bullish Long-term",
       "stanceClass": "neutral",
       "lastVideoDate": "Nov 17, 2025",
       "lastVideoTitle": "Bitcoin And Ethereum: Major Price Level Tagged",
@@ -281,60 +143,19 @@
       "targetPrice": "$73,000 - $75,000 (buy zone), then $150,000+",
       "timeline": "3-6 months pullback, then 12+ months to new highs",
       "reasoning": "Technical analysis shows bull trend line losing strength after 6 tests. Each test increases probability of breakdown. $73K-$75K represents major Fibonacci retracement and volume support from previous rally. Small position now to average down if breaks lower. Long-term macro still bullish.",
-      "confidenceLevel": "High",
-      "milestones": [
-        {
-          "price": 150000,
-          "label": "Long-term Bull Target",
-          "achieved": false,
-          "class": "target"
-        },
-        {
-          "price": 126000,
-          "label": "Previous ATH",
-          "achieved": false,
-          "class": "ath"
-        },
-        {
-          "price": 95628,
-          "label": "Current Price",
-          "achieved": true,
-          "class": "current"
-        },
-        {
-          "price": 93000,
-          "label": "Bull Trend Line (6th Test)",
-          "achieved": true,
-          "class": "critical"
-        },
-        {
-          "price": 88000,
-          "label": "Support if Trend Breaks",
-          "achieved": false,
-          "class": "support"
-        },
-        {
-          "price": 75000,
-          "label": "Major Buy Zone (High)",
-          "achieved": false,
-          "class": "target"
-        },
-        {
-          "price": 73000,
-          "label": "Major Buy Zone (Low)",
-          "achieved": false,
-          "class": "target"
-        }
-      ]
+      "confidenceLevel": "High"
     },
     {
-      "id": 6,
       "name": "Brendan (Market Canary)",
+      "accuracy": "60-65%",
+      "target": "$142K - $152K",
+      "stance": "Strongly Bullish (85%)",
+      "isNew": false,
+      "latestUpdate": "Healthy 61.8% retracement, looking for longs, $94K must hold - Nov 15",
       "avatar": "https://yt3.googleusercontent.com/FrYk-XsohVkqfR02aZDc0_gy3WmXH_pc0FiwxYvdETIWFYF8iDT3_YSq-CqPnPKdWj6WNV4u=s160-c-k-c0x00ffffff-no-rj",
       "twitter": "https://x.com/marketcanary",
       "youtube": "https://www.youtube.com/@MarketCanary",
       "bullishPercent": 85,
-      "stance": "Strongly Bullish",
       "stanceClass": "bullish",
       "lastVideoDate": "Nov 15, 2025",
       "lastVideoTitle": "Bitcoin & Crypto - Sell Off Supports - Looking at Longs",
@@ -349,45 +170,33 @@
       "targetPrice": "$142,000 - $152,000",
       "timeline": "3-6 months",
       "reasoning": "61.8% Fibonacci retracement is classic healthy correction in bull markets. $94K support aligns with key technical levels and volume profile. Multiple bullish catalysts converging (lunar cycles, treasury liquidity, earnings). Risk/reward heavily favors longs at current levels. Secondary support at $89K provides safety net.",
-      "confidenceLevel": "Very High",
-      "milestones": [
-        {
-          "price": 152000,
-          "label": "Bull Target (High)",
-          "achieved": false,
-          "class": "target"
-        },
-        {
-          "price": 142000,
-          "label": "Bull Target (Low)",
-          "achieved": false,
-          "class": "target"
-        },
-        {
-          "price": 126000,
-          "label": "Previous ATH",
-          "achieved": false,
-          "class": "ath"
-        },
-        {
-          "price": 95628,
-          "label": "Current Price",
-          "achieved": true,
-          "class": "current"
-        },
-        {
-          "price": 94235,
-          "label": "Critical Support (Must Hold)",
-          "achieved": false,
-          "class": "support"
-        },
-        {
-          "price": 89000,
-          "label": "Secondary Support",
-          "achieved": false,
-          "class": "support"
-        }
-      ]
+      "confidenceLevel": "Very High"
+    }
+  ],
+  "keyEvents": [
+    {
+      "date": "Oct 6, 2025",
+      "event": "Bitcoin reached all-time high of $126,000"
+    },
+    {
+      "date": "Nov 17, 2025",
+      "event": "Bitcoin broke below 50-week MA for first time since bull run began - critical bearish signal"
+    },
+    {
+      "date": "Nov 17, 2025",
+      "event": "Death cross formed (50-day MA crossed below 200-day MA)"
+    },
+    {
+      "date": "Nov 17, 2025",
+      "event": "Current price: $95,628 (24.1% below ATH)"
+    },
+    {
+      "date": "Nov 20, 2025",
+      "event": "Lunar cycle pivot expected (Brendan's catalyst)"
+    },
+    {
+      "date": "Critical Levels",
+      "event": "$88K-$94K support zone | $108K-$116K resistance for bull confirmation"
     }
   ],
   "consensusAnalysis": {
